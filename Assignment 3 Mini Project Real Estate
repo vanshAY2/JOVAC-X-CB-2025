@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Real Estate Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background: #005599;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url("https://source.unsplash.com/1600x500/?modern-house") no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .container {
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .card-content p {
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🏡 Dream Homes Real Estate</h1>
+    <p>Your trusted partner in finding perfect homes</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Properties</a>
+    <a href="#">Contact</a>
+    <a href="#">About</a>
+  </nav>
+
+  <div class="hero">
+    Find Your Dream Home Today!
+  </div>
+
+  <section class="container" id="propertyList">
+    <!-- Property cards will appear here -->
+  </section>
+
+  <footer>
+    &copy; 2025 Dream Homes. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Basic function to load property cards
+    function loadProperties() {
+      var properties = [
+        {
+          name: "Modern Villa",
+          price: "₹2.2 Cr",
+          location: "Bangalore, India",
+          image: "C:\Users\Win\Desktop\JOVAC-x-CB-2025\GitHub Reprojectory Website with Deploy\Modern Villa.jpeg"
+        },
+        {
+          name: "Luxury Apartment",
+          price: "₹95 Lakh",
+          location: "Mumbai, India",
+          image: "C:\Users\Win\Desktop\JOVAC-x-CB-2025\GitHub Reprojectory Website with Deploy\Luxury Apartments.jpeg"
+        },
+        {
+          name: "Beach House",
+          price: "₹1.8 Cr",
+          location: "Goa, India",
+          image: "C:\Users\Win\Desktop\JOVAC-x-CB-2025\GitHub Reprojectory Website with Deploy\Beach House.jpeg"
+        },
+        {
+          name: "Farmhouse",
+          price: "₹1.5 Cr",
+          location: "Punjab, India",
+          image: "C:\Users\Win\Desktop\JOVAC-x-CB-2025\GitHub Reprojectory Website with Deploy\Farm House.jpeg"
+        },
+        {
+          name: "City Flat",
+          price: "₹75 Lakh",
+          location: "Delhi, India",
+          image: "C:\Users\Win\Desktop\JOVAC-x-CB-2025\GitHub Reprojectory Website with Deploy\City Flat.jpeg"
+        },
+        {
+          name: "Hill Cottage",
+          price: "₹1.3 Cr",
+          location: "Shimla, India",
+          image: "C:\Users\Win\Desktop\JOVAC-x-CB-2025\GitHub Reprojectory Website with Deploy\Hill Cottage.jpg"
+        }
+      ];
+
+      var container = document.getElementById("propertyList");
+
+      for (var i = 0; i < properties.length; i++) {
+        var prop = properties[i];
+
+        var card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML =
+          "<img src='" + prop.image + "' alt='House'>" +
+          "<div class='card-content'>" +
+          "<h3>" + prop.name + "</h3>" +
+          "<p><strong>Price:</strong> " + prop.price + "</p>" +
+          "<p><strong>Location:</strong> " + prop.location + "</p>" +
+          "</div>";
+
+        container.appendChild(card);
+      }
+    }
+
+    // Call the function to show properties
+    loadProperties();
+  </script>
+
+</body>
+</html>
