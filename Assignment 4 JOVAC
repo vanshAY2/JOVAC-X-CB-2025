@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Bubbling & Capturing</title>
+</head>
+
+<body>
+    <!-- Nested elements to demonstrate event flow -->
+    <div id="grandparent">Grandparent
+        <div id="parent">Parent
+            <div id="child">Child</div>
+        </div>
+    </div>
+
+    <script>
+        // Basic functions to handle clicks
+        function grandparentClick() {
+            console.log("grandparent");
+        }
+
+        function parentClick() {
+            console.log("parent");
+        }
+
+        function childClick() {
+            console.log("child");
+        }
+
+        // Event listeners (default is bubbling: false)
+        document.getElementById("grandparent").addEventListener("click", grandparentClick, false);
+        document.getElementById("parent").addEventListener("click", parentClick, false);
+        document.getElementById("child").addEventListener("click", childClick, false);
+    </script>
+</body>
+
+</html>
